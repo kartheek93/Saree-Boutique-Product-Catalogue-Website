@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-cormorant);
+
+  /* Brand accent tokens (Bold & Festive) */
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-teal: var(--teal);
+  --color-plum: var(--plum);
+  --color-royal: var(--royal);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Animations */
+  --animate-marquee: marquee 36s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 36s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes cj-float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+  50% { transform: translateY(-18px) translateX(6px); opacity: 0.9; }
+}
+
+@keyframes cj-twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.15); }
+}
+
+/*
+  ============================================================
+  BonitaShop — "Sabyasachi meets Apple" brand palette
+  Deep wine + antique gold + warm cream. The catalogue runs on
+  a warm cream canvas (so product photos pop); the cinematic
+  hero, footer and section headers use the deep-wine surface
+  via the --plum token. Edit the values below to rebrand.
+  ============================================================
+*/
+:root {
+  --radius: 0.75rem;
+
+  --background: #f7f1e6;        /* warm cream canvas */
+  --foreground: #2a0d1c;        /* deep wine ink */
+
+  --card: #fffdf8;             /* warm white */
+  --card-foreground: #2a0d1c;
+  --popover: #fffdf8;
+  --popover-foreground: #2a0d1c;
+
+  --primary: #7c1f3d;          /* deep wine */
+  --primary-foreground: #fbf3ec;
+
+  --secondary: #efe4d4;        /* sand */
+  --secondary-foreground: #5a1530;
+
+  --muted: #eee2d1;
+  --muted-foreground: #6e5746;  /* warm brown-grey, contrast-checked on cream */
+
+  --accent: #efe4d4;            /* light hover wash */
+  --accent-foreground: #5a1530;
+
+  --destructive: #b3261e;
+
+  --border: #e6d9c4;
+  --input: #ddcdb4;
+  --ring: #7c1f3d;
+
+  /* Brand accents */
+  --royal: #7c1f3d;
+  --gold: #c9a84c;             /* antique gold */
+  --gold-soft: #e6d29a;
+  --teal: #1f6f5c;             /* deep emerald (secondary accent) */
+  --plum: #1a0012;             /* deep wine surface (hero/footer/dark) */
+
+  --chart-1: #7c1f3d;
+  --chart-2: #1f6f5c;
+  --chart-3: #c9a84c;
+  --chart-4: #a23b6a;
+  --chart-5: #5a1530;
+
+  --sidebar: #fffdf8;
+  --sidebar-foreground: #2a0d1c;
+  --sidebar-primary: #7c1f3d;
+  --sidebar-primary-foreground: #fbf3ec;
+  --sidebar-accent: #efe4d4;
+  --sidebar-accent-foreground: #5a1530;
+  --sidebar-border: #e6d9c4;
+  --sidebar-ring: #7c1f3d;
+}
+
+.dark {
+  --background: #1a0012;
+  --foreground: #f5efe6;
+  --card: #2a0d1c;
+  --card-foreground: #f5efe6;
+  --popover: #2a0d1c;
+  --popover-foreground: #f5efe6;
+  --primary: #d98aa6;
+  --primary-foreground: #1a0012;
+  --secondary: #321024;
+  --secondary-foreground: #f5efe6;
+  --muted: #321024;
+  --muted-foreground: #c8a9b6;
+  --accent: #321024;
+  --accent-foreground: #f5efe6;
+  --destructive: #e0655b;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.16);
+  --ring: #d98aa6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
