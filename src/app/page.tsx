@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { ParticleHero } from "@/components/home/particle-hero";
+import { SareeHero } from "@/components/home/saree-hero";
 import { FabricMarquee } from "@/components/home/fabric-marquee";
 import { FeaturedCollections } from "@/components/home/featured-collections";
 import { BrandStory } from "@/components/home/brand-story";
@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <ParticleHero />
+      <SareeHero />
       <FabricMarquee />
       <FeaturedCollections />
 
